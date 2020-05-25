@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="microservices-1"/>
+<aop-project name="SpringBatchDemo2-custom-writer"/>
+<aop-project name="spring-cloud-stream-source"/>
+<aop-project name="SpringBatchDemo4TaskExecutor"/>
+<aop-project name="SpringBatchDemo9ReadAndSkipFirstLine"/>
+<aop-project name="SpringBatchDemo7SkipPolicy"/>
+<aop-project name="first-service"/>
+<aop-project name="spring-cloud-stream-processor"/>
+<aop-project name="microservices-4"/>
+<aop-project name="priya-spring-cloud-stream-rabbit-publisher"/>
+<aop-project name="remote-chunking"/>
+<aop-project name="spring-developer-batch-processing"/>
+<aop-project name="spring-cloud-gateway"/>
+<aop-project name="SpringBatchDemo6-job-execution"/>
+<aop-project name="single-jvm-demos"/>
+<aop-project name="spring-developer-batch-processing2"/>
+<aop-project name="SpringBatchDemo10Tasklet"/>
+<aop-project name="partioning-demo"/>
+<aop-project name="KafkaConsumerApp"/>
+<aop-project name="microservices-3"/>
+<aop-project name="spring-cloud-stream-rabbit"/>
+<aop-project name="SpringBatchDemo1"/>
+<aop-project name="SpringBatchDemo3-db-csv"/>
+<aop-project name="priya-spring-cloud-stream-rabbit"/>
+<aop-project name="kafka-producer-api-batch"/>
+<aop-project name="spring-cloud-stream-sink"/>
+<aop-project name="microservices-2"/>
+<aop-project name="second-service-"/>
+<aop-project name="SpringBatchDemo9FixesLengthLineTokenizer"/>
+<aop-project name="SpringBatchDemo5-multi-step"/>
+<aop-project name="SpringBatchDemo8-Listener"/>
+</aop-reference-model>

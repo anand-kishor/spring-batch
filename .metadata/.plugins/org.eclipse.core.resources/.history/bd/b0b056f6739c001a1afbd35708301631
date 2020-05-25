@@ -1,0 +1,5 @@
+package com.spring.batch.kafka.baseconfig;
+
+public class BaseConfig {
+
+}

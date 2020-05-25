@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.messagingrabbit.orders.OrdersChannel.java&apos; to &apos;Orders.java&apos;&#x0D;&#x0A;- Original project: &apos;priya-spring-cloud-stream-rabbit-publisher&apos;&#x0D;&#x0A;- Original element: &apos;com.messagingrabbit.orders.OrdersChannel.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.messagingrabbit.orders.Orders.java&apos;" description="Rename compilation unit &apos;OrdersChannel.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.messagingrabbit.orders{OrdersChannel.java" name="Orders.java" references="false" stamp="1582291618301" version="1.0"/>
+</session>

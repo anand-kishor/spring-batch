@@ -1,0 +1,73 @@
+package com.javacodingskills.spring.batch.demo1.runner;
+
+import java.util.Date;
+
+//import org.apache.coyote.Constants;
+//import org.apache.catalina.loader.Constants;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+//import org.apache.tomcat.util.scan.Constants;
+//import org.apache.logging.log4j.util.Constants;
+//import org.apache.catalina.valves.Constants;
+//import org.apache.catalina.manager.host.Constants;
+//import org.apache.catalina.mapper.Constants;
+//import org.apache.naming.factory.Constants;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
+import org.springframework.batch.core.JobParametersInvalidException;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
+import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.batch.core.repository.JobRestartException;
+import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.cglib.core.Constants;
+//import org.springframework.core.Constants;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
+
+import com.javacodingskills.spring.batch.demo1.utils.Constants;
+
+@Component
+public class JobRunner {
+	private static final Logger logger=LogManager.getLogger(JobRunner.class);
+	private JobLauncher jobLauncher;
+	private Job demo1;
+	@Autowired
+	public JobRunner(JobLauncher jobLauncher, Job demo1) {
+		
+		this.jobLauncher = jobLauncher;
+		this.demo1 = demo1;
+	}
+	
+	@Async
+	public void runBatchJob()
+	{
+		JobParametersBuilder builder=new JobParametersBuilder();
+		builder.addString(Constants.FILE_NAME_CONTEXT_KEY, "employees.csv");
+		builder.addDate("date", new Date(), true);
+		runJob(demo1,builder.toJobParameters());
+	}
+
+	private void runJob(Job demo12, JobParameters jobParameters) {
+		// TODO Auto-generated method stub//
+		try {
+			System.out.println("before a job");
+			JobExecution execution=jobLauncher.run(demo12,jobParameters);
+			System.out.println("after a job");
+		} catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException
+				| JobParametersInvalidException e) {
+			// TODO Auto-generated catch block
+			logger.info("job with fileName={} is all reddy running"+jobParameters.getParameters().get(Constants.FILE_NAME_CONTEXT_KEY));
+			logger.info("job with fileName={} was not resticted"+jobParameters.getParameters().get(Constants.FILE_NAME_CONTEXT_KEY));
+			logger.info("job with fileName={} alredy completed"+jobParameters.getParameters().get(Constants.FILE_NAME_CONTEXT_KEY));
+			logger.info("invalid job parameters"+jobParameters.getParameters().get(Constants.FILE_NAME_CONTEXT_KEY));
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+
+}
